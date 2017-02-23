@@ -2,7 +2,7 @@ import C from '../constants'
 import { combineReducers } from 'redux'
 
 
-export const allPlayerDetails = (state=[], action) => {
+export const allPlayerDetails = (state = [], action) => {
   switch(action.type) {
     case C.ADD_PLAYER :
 
@@ -18,7 +18,7 @@ export const allPlayerDetails = (state=[], action) => {
 
       const index = action.payload.id;
 
-      console.log("STATE @ INDEX: ", state[index].notes)
+      //Mutating state. Need to find better solution
       state[index].notes.push(action.payload.note)
       return state
       // return [
