@@ -1,5 +1,5 @@
 import C from './constants'
-import { addGameDate, addOpponent } from './store/reducers'
+import appReducer from './store/reducers'
 import initialState from './initialState.json'
 
 let state = initialState
@@ -17,12 +17,12 @@ console.log(`
 `)
 
 
-state.gameDate = addGameDate(state, {
+state = appReducer(state, {
   type: C.ADD_GAME_DATE,
   payload: "2016-02-28"
 })
 
-state.opponent = addOpponent(state, {
+state = appReducer(state, {
   type: C.ADD_OPPONENT,
   payload: "Washburn"
 })
@@ -35,6 +35,6 @@ console.log(`
   players: ${JSON.stringify(state.allPlayerDetails)}
   team: ${JSON.stringify(state.allTeamDetails)}
   game date: ${state.gameDate}
-  opponent: ${JSON.stringify(state.opponent)}
+  opponent: ${state.opponent}
 
 `)
