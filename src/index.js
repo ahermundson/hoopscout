@@ -16,7 +16,6 @@ console.log(`
 
 `)
 
-
 state = appReducer(state, {
   type: C.ADD_GAME_DATE,
   payload: "2016-02-28"
@@ -25,6 +24,38 @@ state = appReducer(state, {
 state = appReducer(state, {
   type: C.ADD_OPPONENT,
   payload: "Washburn"
+})
+
+state = appReducer(state, {
+  type: C.ADD_TEAM_NOTE,
+  payload: "1-3-1 zone out of timeouts"
+})
+
+state = appReducer(state, {
+  type: C.ADD_PLAYER,
+  payload: {
+    "id": state.allPlayerDetails.length,
+    "name": "Nora Hermundson",
+    "position": "Guard",
+    "height": "5'3\"",
+    "isStarter": true,
+    "notes": [
+      
+    ]
+  }
+})
+
+state = appReducer(state, {
+  type: C.REMOVE_PLAYER,
+  payload: 1
+})
+
+state = appReducer(state, {
+  type: C.ADD_PLAYER_NOTE,
+  payload: {
+    "id": 1,
+    "note": "Hates broccoli"
+  }
 })
 
 console.log(`
