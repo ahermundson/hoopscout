@@ -26,6 +26,9 @@ export const allPlayerDetails = (state = [], action) => {
       //   action.payload.note
       // ]
 
+    case C.REMOVE_PLAYER_NOTE :
+      return state[index].notes.filter((i) => i !== action.payload)
+
     default:
       return state
   }
