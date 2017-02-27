@@ -39,3 +39,9 @@ export const removePlayerNote = function(noteId) {
     paylod: noteId
   }
 }
+
+export const addPlayerNote = (note, playerId) => ({
+  type: C.ADD_PLAYER_NOTE,
+  playerId: playerId,
+  payload: note
+})
